@@ -6,7 +6,9 @@
 package timer;
 
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 
@@ -34,12 +36,13 @@ public class JFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel = new javax.swing.JPanel();
-        label = new javax.swing.JLabel();
         button = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        label.setText("Dylan's button clicker");
+        setTitle("Dylan's button");
 
         button.setText("CLICK");
         button.addActionListener(new java.awt.event.ActionListener() {
@@ -53,27 +56,36 @@ public class JFrame extends javax.swing.JFrame {
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label)
-                    .addComponent(button))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(button)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label)
                 .addGap(34, 34, 34)
                 .addComponent(button)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("File");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,8 +110,17 @@ boolean buttonColored = false;
         } else if(buttonColored == false) {
             button.setBackground(Color.WHITE);
         }
+        if(buttonColored == true){
+           String name = JOptionPane.showInputDialog(getParent(),
+                           "What is your name?", null);
+        }
 
     }//GEN-LAST:event_buttonActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        
+              
+    }//GEN-LAST:event_jMenu1ActionPerformed
 
     int numberOfPresses = 0;                                             
 //store int value of item clicked @ JList
@@ -142,7 +163,9 @@ boolean buttonColored = false;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JLabel label;
     // End of variables declaration//GEN-END:variables
 }
