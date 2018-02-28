@@ -2,9 +2,9 @@ float scale = 10;
 
 void setup()
 {
-  size(displayWidth, displayHeight);
+  size(500, 500);
   
-  strokeWeight(displayHeight*0.01);
+  // strokeWeight(displayHeight*0.01);
   orientation(PORTRAIT);
 }
 
